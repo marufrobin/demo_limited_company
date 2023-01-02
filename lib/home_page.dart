@@ -88,12 +88,14 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         ExpansionTile(
-                          childrenPadding: EdgeInsets.all(12),
+                          childrenPadding: EdgeInsets.all(4),
                           // backgroundColor: Color(0xffC9ECE3),
                           collapsedTextColor: Colors.black,
+
                           iconColor: Color(0xff10AB83),
                           textColor: Color(0xff10AB83),
                           expandedCrossAxisAlignment: CrossAxisAlignment.start,
+
                           leading: IconButton(
                               onPressed: (() {}),
                               icon: Icon(
@@ -102,44 +104,72 @@ class HomePage extends StatelessWidget {
                               )),
                           title: Text(
                             'Purchase',
-                            style: buildTSForExpansion(14),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Poppins",
+                            ),
                           ),
                           children: [
-                            Text(
-                              "Purchase List",
-                              style: buildTSForExpansion(12),
-                            ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Text(
-                              "Purchase List",
-                              style: buildTSForExpansion(12),
-                            ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Text(
-                              "Order List",
-                              style: buildTSForExpansion(12),
-                            ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Text(
-                              "VAT List",
-                              style: buildTSForExpansion(12),
-                            ),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Text("Product Unit",
-                                style: buildTSForExpansion(12)),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            Text("Purchese Report",
-                                style: buildTSForExpansion(12)),
+                            IntrinsicHeight(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 26,
+                                  ),
+                                  VerticalDivider(
+                                    color: Color(0xffC9ECE3),
+                                    width: 10,
+                                    thickness: 1,
+                                  ),
+                                  SizedBox(
+                                    width: 46,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Purchase List",
+                                        style: buildTSForExpansion(12),
+                                      ),
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text(
+                                        "Purchase List",
+                                        style: buildTSForExpansion(12),
+                                      ),
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text(
+                                        "Order List",
+                                        style: buildTSForExpansion(12),
+                                      ),
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text(
+                                        "VAT List",
+                                        style: buildTSForExpansion(12),
+                                      ),
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text("Product Unit",
+                                          style: buildTSForExpansion(12)),
+                                      SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text("Purchese Report",
+                                          style: buildTSForExpansion(12)),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       ],
@@ -175,9 +205,9 @@ class HomePage extends StatelessWidget {
 
   TextStyle buildTSForExpansion(double fs) {
     return TextStyle(
-      fontSize: fs,
-      fontWeight: FontWeight.w500,
-      fontFamily: "Poppins",
-    );
+        fontSize: fs,
+        fontWeight: FontWeight.w500,
+        fontFamily: "Poppins",
+        color: Color(0xff10AB83));
   }
 }
