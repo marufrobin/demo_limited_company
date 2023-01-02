@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.pop(context);
+                            _key.currentState!.closeDrawer();
                           },
                           child: Container(
                               margin: EdgeInsets.all(8),
@@ -85,6 +85,65 @@ class HomePage extends StatelessWidget {
                   flex: 5,
                   child: Container(
                     color: Colors.white,
+                    child: Column(
+                      children: [
+                        ExpansionTile(
+                          childrenPadding: EdgeInsets.all(12),
+                          // backgroundColor: Color(0xffC9ECE3),
+                          collapsedTextColor: Colors.black,
+                          iconColor: Color(0xff10AB83),
+                          textColor: Color(0xff10AB83),
+                          expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                          leading: IconButton(
+                              onPressed: (() {}),
+                              icon: Icon(
+                                Icons.shopping_cart_rounded,
+                                size: 16,
+                              )),
+                          title: Text(
+                            'Purchase',
+                            style: buildTSForExpansion(14),
+                          ),
+                          children: [
+                            Text(
+                              "Purchase List",
+                              style: buildTSForExpansion(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "Purchase List",
+                              style: buildTSForExpansion(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "Order List",
+                              style: buildTSForExpansion(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "VAT List",
+                              style: buildTSForExpansion(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text("Product Unit",
+                                style: buildTSForExpansion(12)),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text("Purchese Report",
+                                style: buildTSForExpansion(12)),
+                          ],
+                        ),
+                      ],
+                    ),
                   ))
             ],
           ),
@@ -111,6 +170,14 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
         ),
       ),
+    );
+  }
+
+  TextStyle buildTSForExpansion(double fs) {
+    return TextStyle(
+      fontSize: fs,
+      fontWeight: FontWeight.w500,
+      fontFamily: "Poppins",
     );
   }
 }
