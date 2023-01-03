@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         ExpansionTile(
-                          childrenPadding: EdgeInsets.all(4),
+                          childrenPadding: EdgeInsets.all(12),
                           // backgroundColor: Color(0xffC9ECE3),
                           collapsedTextColor: Colors.black,
 
@@ -116,7 +116,7 @@ class HomePage extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(
-                                    width: 26,
+                                    width: 20,
                                   ),
                                   VerticalDivider(
                                     color: Color(0xffC9ECE3),
@@ -172,6 +172,39 @@ class HomePage extends StatelessWidget {
                             )
                           ],
                         ),
+                        ExpansionTile(
+                          iconColor: Color(0xff10AB83),
+                          textColor: Color(0xff10AB83),
+                          leading: IconButton(
+                              onPressed: (() {}),
+                              icon: Icon(
+                                Icons.shopping_bag_rounded,
+                                size: 16,
+                              )),
+                          title: Text(
+                            'Sell',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Poppins",
+                            ),
+                          ),
+                        ),
+                        ExpansionTile(
+                          iconColor: Color(0xff10AB83),
+                          textColor: Color(0xff10AB83),
+                          leading: IconButton(
+                              onPressed: (() {}),
+                              icon: Image.asset('images/stock.png')),
+                          title: Text(
+                            'Stock / Inventory',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Poppins",
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ))
@@ -183,7 +216,7 @@ class HomePage extends StatelessWidget {
             onTap: () {
               _key.currentState!.openDrawer();
             },
-            child: Container(
+            child: SizedBox(
                 width: 16,
                 height: 14,
                 child: Image.asset(
@@ -199,6 +232,7 @@ class HomePage extends StatelessWidget {
           ),
           centerTitle: true,
         ),
+        body: BodyTable(),
       ),
     );
   }
@@ -209,5 +243,51 @@ class HomePage extends StatelessWidget {
         fontWeight: FontWeight.w500,
         fontFamily: "Poppins",
         color: Color(0xff10AB83));
+  }
+}
+
+class BodyTable extends StatelessWidget {
+  const BodyTable({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      child: Table(
+          border: TableBorder.all(width: 0.5, color: Color(0xff10AB83)),
+          columnWidths: <int, TableColumnWidth>{
+            0: IntrinsicColumnWidth(flex: 2),
+            1: FlexColumnWidth(),
+            // 2: FixedColumnWidth(10),
+          },
+          children: [
+            TableRow(children: [
+              TableCell(
+                  verticalAlignment: TableCellVerticalAlignment.fill,
+                  child: Container(
+                    color: Colors.green,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 40,
+                          color: Colors.green,
+                        ),
+                        Container(
+                          height: 40,
+                          color: Colors.blueGrey,
+                        )
+                      ],
+                    ),
+                  )),
+              Container(
+                width: 78,
+                height: 80,
+                color: Colors.cyan,
+              )
+            ])
+          ]),
+    );
   }
 }
