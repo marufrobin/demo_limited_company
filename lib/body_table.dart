@@ -1,3 +1,5 @@
+import 'package:demo_limited_company/payment_table.dart';
+import 'package:demo_limited_company/return_table.dart';
 import 'package:flutter/material.dart';
 
 class BodyTable extends StatelessWidget {
@@ -9,250 +11,271 @@ class BodyTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      child: Table(
-          border: TableBorder.all(
-              width: 2,
-              color: Color(0xff10AB83),
-              borderRadius: BorderRadius.circular(4)),
-          columnWidths: <int, TableColumnWidth>{
-            0: IntrinsicColumnWidth(flex: 2),
-            // 0: FlexColumnWidth(2),
-            1: FlexColumnWidth(),
-            // 2: FixedColumnWidth(10),
-          },
-          children: [
-            TableRow(children: [
-              TableCell(
-                  verticalAlignment: TableCellVerticalAlignment.fill,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.only(topLeft: Radius.circular(4)),
-                          color: Color(0xff10AB83),
-                        ),
-                        width: double.infinity,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                        child: Text(
-                          "Dues",
-                          style: buildTS(20, Colors.white),
-                        ),
-                      ),
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-                        height: 40,
-                        child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              "Previous Due",
-                              style: buildTS(14, Colors.black),
+      child: Column(
+        children: [
+          Table(
+              border: TableBorder.all(
+                  width: 2,
+                  color: Color(0xff10AB83),
+                  borderRadius: BorderRadius.circular(4)),
+              columnWidths: <int, TableColumnWidth>{
+                0: IntrinsicColumnWidth(flex: 2),
+                // 0: FlexColumnWidth(2),
+                1: FlexColumnWidth(),
+                // 2: FixedColumnWidth(10),
+              },
+              children: [
+                TableRow(children: [
+                  TableCell(
+                      verticalAlignment: TableCellVerticalAlignment.fill,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(4)),
+                              color: Color(0xff10AB83),
                             ),
-                            SizedBox(
-                              width: 10,
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 5),
+                            child: Text(
+                              "Dues",
+                              style: buildTS(20, Colors.white),
                             ),
-                            Text(
-                              "01 January 2022",
-                              style: buildTS(12, Colors.black, FontWeight.w400),
-                            )
-                          ],
-                        ),
-                        // color: Colors.blueGrey,
-                      )
-                    ],
-                  )),
-              Container(
-                width: 78,
-                height: 80,
-                // color: Colors.cyan,
-                child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text("Due",
-                        style: buildTS(
-                            12, Colors.black, FontWeight.w500, "Inter")),
-                    Text("৳ 20000",
-                        style: buildTS(
-                            12, Color(0xffF37048), FontWeight.w600, "Inter"))
-                  ],
-                ),
-              )
-            ]),
-
-            /// parchases Row...
-            TableRow(children: [
-              TableCell(
-                  verticalAlignment: TableCellVerticalAlignment.fill,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.only(topLeft: Radius.circular(4)),
-                          color: Color(0xff10AB83),
-                        ),
-                        width: double.infinity,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                        child: Text(
-                          "Purchase",
-                          style: buildTS(20, Colors.white),
-                        ),
-                      ),
-                      Container(
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Color(0xff10AB83))),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 14, vertical: 12),
-                          height: 68,
-                          child: Column(
-                            children: [
-                              textInHorizotal(
-                                  "Invoice Date : ", "01 January 2022"),
-                              textInHorizotal("Invoice No. : ", "5386328"),
-                            ],
-                          )
-                          // color: Colors.blueGrey,
                           ),
-                      Container(
-                        // padding:
-                        //     EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                        height: 164,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xff10AB83))),
-
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 2,
-                                child: Container(
-                                  margin: EdgeInsets.all(16),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                      textInVertical(
-                                          "200 pcs x 200", "Test product 01"),
-                                    ],
-                                  ),
-                                )),
-                            customDivider(),
-                            Expanded(
-                                child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 14, vertical: 12),
+                            height: 40,
+                            child: Row(
+                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text("৳ 40000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                                Text("৳ 6000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                                Text("৳ 4000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
+                                Text(
+                                  "Previous Due",
+                                  style: buildTS(14, Colors.black),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "01 January 2022",
+                                  style: buildTS(
+                                      12, Colors.black, FontWeight.w400),
+                                )
                               ],
-                            )),
-                          ],
+                            ),
+                            // color: Colors.blueGrey,
+                          )
+                        ],
+                      )),
+                  Container(
+                    width: 78,
+                    height: 80,
+                    // color: Colors.cyan,
+                    child: Column(
+                      // crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SizedBox(
+                          height: 16,
                         ),
-                        // color: Colors.red,
-                      ),
-                      buildTowItemData(
-                          firstItemName: "Discount",
-                          firstItemPrice: '0',
-                          secoundItemName: "Vat",
-                          secoundItemPrice: '0'),
-                      buildTowItemData(
-                          firstItemName: "Grand Total",
-                          firstItemPrice: '50000',
-                          secoundItemName: "Previous Due",
-                          secoundItemPrice: '20000'),
-                      buildTowItemData(
-                          firstItemName: "Total Amount",
-                          firstItemPrice: '70000',
-                          secoundItemName: "Total Payment",
-                          secoundItemPrice: '40000'),
-                      Container(
-                        // padding:
-                        //     EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                        height: 46,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xff10AB83))),
-
-                        child: Row(
-                          children: [
-                            Expanded(
-                                flex: 2,
-                                child: Container(
-                                  margin: EdgeInsets.all(12),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Remaining Balance",
-                                        style: buildTS(
-                                            12, Colors.black, FontWeight.w600),
-                                      ),
-                                    ],
-                                  ),
-                                )),
-                            customDivider(),
-                            Expanded(
-                                child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text("৳ 30000",
-                                    style: buildTS(12, Colors.black,
-                                        FontWeight.w500, "Poppins")),
-                              ],
-                            )),
-                          ],
-                        ),
-                        // color: Colors.red,
-                      ),
-                    ],
-                  )),
-
-              //Due price column
-              Container(
-                width: 78,
-                height: 510,
-                // color: Colors.cyan,
-                child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      height: 16,
+                        Text("Due",
+                            style: buildTS(
+                                12, Colors.black, FontWeight.w500, "Inter")),
+                        Text("৳ 20000",
+                            style: buildTS(12, Color(0xffF37048),
+                                FontWeight.w600, "Inter"))
+                      ],
                     ),
-                    Text("Due",
-                        style: buildTS(
-                            12, Colors.black, FontWeight.w500, "Inter")),
-                    Text("৳ 30000",
-                        style: buildTS(
-                            12, Color(0xffF37048), FontWeight.w600, "Inter"))
-                  ],
-                ),
-              )
-            ]),
-          ]),
+                  )
+                ]),
+              ]),
+          Table(
+              border: TableBorder.all(
+                  width: 2,
+                  color: Color(0xff10AB83),
+                  borderRadius: BorderRadius.circular(4)),
+              columnWidths: <int, TableColumnWidth>{
+                0: IntrinsicColumnWidth(flex: 2),
+                // 0: FlexColumnWidth(2),
+                1: FlexColumnWidth(),
+                // 2: FixedColumnWidth(10),
+              },
+              children: [
+                /// parchases Row...
+                TableRow(children: [
+                  TableCell(
+                      verticalAlignment: TableCellVerticalAlignment.fill,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(4)),
+                              color: Color(0xff10AB83),
+                            ),
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 5),
+                            child: Text(
+                              "Purchase",
+                              style: buildTS(20, Colors.white),
+                            ),
+                          ),
+                          Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Color(0xff10AB83))),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 14, vertical: 12),
+                              height: 68,
+                              child: Column(
+                                children: [
+                                  textInHorizotal(
+                                      "Invoice Date : ", "01 January 2022"),
+                                  textInHorizotal("Invoice No. : ", "5386328"),
+                                ],
+                              )
+                              // color: Colors.blueGrey,
+                              ),
+                          Container(
+                            // padding:
+                            //     EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                            height: 164,
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Color(0xff10AB83))),
+
+                            child: Row(
+                              children: [
+                                Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                      margin: EdgeInsets.all(16),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          textInVertical("200 pcs x 200",
+                                              "Test product 01"),
+                                          textInVertical("200 pcs x 200",
+                                              "Test product 01"),
+                                          textInVertical("200 pcs x 200",
+                                              "Test product 01"),
+                                        ],
+                                      ),
+                                    )),
+                                customDivider(),
+                                Expanded(
+                                    child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text("৳ 40000",
+                                        style: buildTS(12, Colors.black,
+                                            FontWeight.w500, "Poppins")),
+                                    Text("৳ 6000",
+                                        style: buildTS(12, Colors.black,
+                                            FontWeight.w500, "Poppins")),
+                                    Text("৳ 4000",
+                                        style: buildTS(12, Colors.black,
+                                            FontWeight.w500, "Poppins")),
+                                  ],
+                                )),
+                              ],
+                            ),
+                            // color: Colors.red,
+                          ),
+                          buildTowItemData(
+                              firstItemName: "Discount",
+                              firstItemPrice: '0',
+                              secoundItemName: "Vat",
+                              secoundItemPrice: '0'),
+                          buildTowItemData(
+                              firstItemName: "Grand Total",
+                              firstItemPrice: '50000',
+                              secoundItemName: "Previous Due",
+                              secoundItemPrice: '20000'),
+                          buildTowItemData(
+                              firstItemName: "Total Amount",
+                              firstItemPrice: '70000',
+                              secoundItemName: "Total Payment",
+                              secoundItemPrice: '40000'),
+                          Container(
+                            // padding:
+                            //     EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                            height: 46,
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Color(0xff10AB83))),
+
+                            child: Row(
+                              children: [
+                                Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                      margin: EdgeInsets.all(12),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Remaining Balance",
+                                            style: buildTS(12, Colors.black,
+                                                FontWeight.w600),
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                                customDivider(),
+                                Expanded(
+                                    child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text("৳ 30000",
+                                        style: buildTS(12, Colors.black,
+                                            FontWeight.w500, "Poppins")),
+                                  ],
+                                )),
+                              ],
+                            ),
+                            // color: Colors.red,
+                          ),
+                        ],
+                      )),
+
+                  //Due price column
+                  Container(
+                    width: 78,
+                    height: 510,
+                    // color: Colors.cyan,
+                    child: Column(
+                      // crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Text("Due",
+                            style: buildTS(
+                                12, Colors.black, FontWeight.w500, "Inter")),
+                        Text("৳ 30000",
+                            style: buildTS(12, Color(0xffF37048),
+                                FontWeight.w600, "Inter"))
+                      ],
+                    ),
+                  )
+                ]),
+              ]),
+          PaymentTable(),
+          ReturnTable()
+        ],
+      ),
     );
   }
 

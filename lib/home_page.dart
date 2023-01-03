@@ -240,7 +240,7 @@ class HomePage extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body: BodyTable(),
+        body: SingleChildScrollView(child: BodyTable()),
       ),
     );
   }
