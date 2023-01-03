@@ -251,6 +251,8 @@ class BodyTable extends StatelessWidget {
 
                   //Due price column
                   Container(
+                    padding: EdgeInsets.all(10),
+
                     width: 78,
                     height: 510,
                     // color: Colors.cyan,
@@ -273,7 +275,30 @@ class BodyTable extends StatelessWidget {
                 ]),
               ]),
           PaymentTable(),
-          ReturnTable()
+          ReturnTable(),
+          SizedBox(
+            height: 24,
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+                elevation: MaterialStateProperty.all(0),
+                backgroundColor: MaterialStateProperty.all(Color(0xff10AB83))),
+            onPressed: () {},
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.add_circle),
+                  Text(
+                    "Pay the balance",
+                    style:
+                        buildTS(16, Colors.white, FontWeight.w600, "Poppins"),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

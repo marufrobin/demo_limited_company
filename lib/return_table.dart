@@ -34,7 +34,7 @@ class ReturnTable extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 16, vertical: 5),
                       child: Text(
-                        "Purchase",
+                        "Return",
                         style: buildTS(20, Colors.white),
                       ),
                     ),
@@ -53,6 +53,58 @@ class ReturnTable extends StatelessWidget {
                         )
                         // color: Colors.blueGrey,
                         ),
+                    Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xff10AB83))),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                        height: 68,
+                        child: Column(
+                          children: [
+                            textInHorizotal(
+                                "Invoice Date : ", "01 January 2022"),
+                            textInHorizotal("Invoice No. : ", "5386328"),
+                          ],
+                        )
+                        // color: Colors.blueGrey,
+                        ),
+                    Container(
+                      // padding:
+                      //     EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      height: 70,
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xff10AB83))),
+
+                      child: Row(
+                        children: [
+                          Expanded(
+                              flex: 2,
+                              child: Container(
+                                margin: EdgeInsets.all(16),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    textInVertical(
+                                        "200 pcs x 200", "Test product 01"),
+                                  ],
+                                ),
+                              )),
+                          customDivider(),
+                          Expanded(
+                              child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text("৳ 40000",
+                                  style: buildTS(12, Colors.black,
+                                      FontWeight.w500, "Poppins")),
+                            ],
+                          )),
+                        ],
+                      ),
+                      // color: Colors.red,
+                    ),
                     buildTowItemData(
                         firstItemName: "Discount",
                         firstItemPrice: '0',
@@ -60,14 +112,14 @@ class ReturnTable extends StatelessWidget {
                         secoundItemPrice: '0'),
                     buildTowItemData(
                         firstItemName: "Grand Total",
-                        firstItemPrice: '50000',
+                        firstItemPrice: '5000',
                         secoundItemName: "Previous Due",
                         secoundItemPrice: '20000'),
                     buildTowItemData(
                         firstItemName: "Total Amount",
-                        firstItemPrice: '70000',
-                        secoundItemName: "Total Payment",
-                        secoundItemPrice: '40000'),
+                        firstItemPrice: '15000',
+                        secoundItemName: "Total Paid",
+                        secoundItemPrice: '0'),
                     Container(
                       // padding:
                       //     EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -99,7 +151,7 @@ class ReturnTable extends StatelessWidget {
                               child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text("৳ 30000",
+                              Text("৳ 15000",
                                   style: buildTS(12, Colors.black,
                                       FontWeight.w500, "Poppins")),
                             ],
@@ -113,8 +165,9 @@ class ReturnTable extends StatelessWidget {
 
             //Due price column
             Container(
+              padding: EdgeInsets.all(10),
               width: 78,
-              height: 346,
+              height: 486,
               // color: Colors.cyan,
               child: Column(
                 // crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,7 +179,7 @@ class ReturnTable extends StatelessWidget {
                   Text("Due",
                       style:
                           buildTS(12, Colors.black, FontWeight.w500, "Inter")),
-                  Text("৳ 30000",
+                  Text("৳ 15000",
                       style: buildTS(
                           12, Color(0xffF37048), FontWeight.w600, "Inter"))
                 ],

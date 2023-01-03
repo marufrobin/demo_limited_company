@@ -17,7 +17,6 @@ class PaymentTable extends StatelessWidget {
           // 2: FixedColumnWidth(10),
         },
         children: [
-          /// parchases Row...
           TableRow(children: [
             TableCell(
                 verticalAlignment: TableCellVerticalAlignment.fill,
@@ -34,7 +33,7 @@ class PaymentTable extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 16, vertical: 5),
                       child: Text(
-                        "Purchase",
+                        "Payment",
                         style: buildTS(20, Colors.white),
                       ),
                     ),
@@ -48,7 +47,7 @@ class PaymentTable extends StatelessWidget {
                           children: [
                             textInHorizotal(
                                 "Invoice Date : ", "01 January 2022"),
-                            textInHorizotal("Invoice No. : ", "5386328"),
+                            textInHorizotal("Invoice No. : ", "53863323"),
                           ],
                         )
                         // color: Colors.blueGrey,
@@ -60,14 +59,14 @@ class PaymentTable extends StatelessWidget {
                         secoundItemPrice: '0'),
                     buildTowItemData(
                         firstItemName: "Grand Total",
-                        firstItemPrice: '50000',
+                        firstItemPrice: '0',
                         secoundItemName: "Previous Due",
-                        secoundItemPrice: '20000'),
+                        secoundItemPrice: '30000'),
                     buildTowItemData(
                         firstItemName: "Total Amount",
-                        firstItemPrice: '70000',
+                        firstItemPrice: '30000',
                         secoundItemName: "Total Payment",
-                        secoundItemPrice: '40000'),
+                        secoundItemPrice: '10000'),
                     Container(
                       // padding:
                       //     EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -99,7 +98,7 @@ class PaymentTable extends StatelessWidget {
                               child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text("৳ 30000",
+                              Text("৳ 20000",
                                   style: buildTS(12, Colors.black,
                                       FontWeight.w500, "Poppins")),
                             ],
@@ -113,6 +112,8 @@ class PaymentTable extends StatelessWidget {
 
             //Due price column
             Container(
+              padding: EdgeInsets.all(10),
+
               width: 78,
               height: 346,
               // color: Colors.cyan,
@@ -126,7 +127,7 @@ class PaymentTable extends StatelessWidget {
                   Text("Due",
                       style:
                           buildTS(12, Colors.black, FontWeight.w500, "Inter")),
-                  Text("৳ 30000",
+                  Text("৳ 20000",
                       style: buildTS(
                           12, Color(0xffF37048), FontWeight.w600, "Inter"))
                 ],
