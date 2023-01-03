@@ -322,7 +322,84 @@ class BodyTable extends StatelessWidget {
                 height: 80,
                 // color: Colors.cyan,
                 child: Column(
-                  children: [Text("Due")],
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      height: 16,
+                    ),
+                    Text("Due",
+                        style: buildTS(
+                            12, Colors.black, FontWeight.w500, "Inter")),
+                    Text("৳ 20000",
+                        style: buildTS(
+                            12, Color(0xffF37048), FontWeight.w600, "Inter"))
+                  ],
+                ),
+              )
+            ]),
+            TableRow(children: [
+              TableCell(
+                  verticalAlignment: TableCellVerticalAlignment.fill,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.only(topLeft: Radius.circular(4)),
+                          color: Color(0xff10AB83),
+                        ),
+                        width: double.infinity,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                        child: Text(
+                          "Purchase",
+                          style: buildTS(20, Colors.white),
+                        ),
+                      ),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                        height: 40,
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              "Previous Due",
+                              style: buildTS(14, Colors.black),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "01 January 2022",
+                              style: buildTS(12, Colors.black, FontWeight.w400),
+                            )
+                          ],
+                        ),
+                        // color: Colors.blueGrey,
+                      )
+                    ],
+                  )),
+              Container(
+                width: 78,
+                height: 490,
+                // color: Colors.cyan,
+                child: Column(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      height: 16,
+                    ),
+                    Text("Due",
+                        style: buildTS(
+                            12, Colors.black, FontWeight.w500, "Inter")),
+                    Text("৳ 30000",
+                        style: buildTS(
+                            12, Color(0xffF37048), FontWeight.w600, "Inter"))
+                  ],
                 ),
               )
             ])
@@ -330,11 +407,11 @@ class BodyTable extends StatelessWidget {
     );
   }
 
-  TextStyle buildTS(double fs, [Color? clr, FontWeight? fw]) {
+  TextStyle buildTS(double fs, [Color? clr, FontWeight? fw, String? fF]) {
     return TextStyle(
         fontSize: fs,
         fontWeight: fw == null ? FontWeight.w600 : fw,
-        fontFamily: "Poppins",
+        fontFamily: fF == null ? "Poppins" : "Inter",
         color: clr == null ? Color(0xff10AB83) : clr);
   }
 }
