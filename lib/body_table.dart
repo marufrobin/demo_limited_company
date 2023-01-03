@@ -292,8 +292,7 @@ class BodyTable extends StatelessWidget {
                   Icon(Icons.add_circle),
                   Text(
                     "Pay the balance",
-                    style:
-                        buildTS(16, Colors.white, FontWeight.w600, "Poppins"),
+                    style: buildTS(16, Colors.white, FontWeight.w500, ""),
                   ),
                 ],
               ),
