@@ -257,11 +257,12 @@ class BodyTable extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       child: Table(
           border: TableBorder.all(
-              width: 0.5,
+              width: 2,
               color: Color(0xff10AB83),
               borderRadius: BorderRadius.circular(4)),
           columnWidths: <int, TableColumnWidth>{
             0: IntrinsicColumnWidth(flex: 2),
+            // 0: FlexColumnWidth(2),
             1: FlexColumnWidth(),
             // 2: FixedColumnWidth(10),
           },
@@ -269,20 +270,28 @@ class BodyTable extends StatelessWidget {
             TableRow(children: [
               TableCell(
                   verticalAlignment: TableCellVerticalAlignment.fill,
-                  child: Container(
-                    // color: Colors.green,
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 40,
-                          // color: Colors.green,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.only(topLeft: Radius.circular(4)),
+                          color: Color(0xff10AB83),
                         ),
-                        Container(
-                          height: 40,
-                          // color: Colors.blueGrey,
-                        )
-                      ],
-                    ),
+                        width: double.infinity,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                        child: Text(
+                          "Dues",
+                          style: buildTS(20, Colors.white),
+                        ),
+                      ),
+                      Container(
+                        height: 40,
+                        // color: Colors.blueGrey,
+                      )
+                    ],
                   )),
               Container(
                 width: 78,
@@ -292,5 +301,13 @@ class BodyTable extends StatelessWidget {
             ])
           ]),
     );
+  }
+
+  TextStyle buildTS(double fs, [Color? clr]) {
+    return TextStyle(
+        fontSize: fs,
+        fontWeight: FontWeight.w600,
+        fontFamily: "Poppins",
+        color: clr == null ? Color(0xff10AB83) : clr);
   }
 }
