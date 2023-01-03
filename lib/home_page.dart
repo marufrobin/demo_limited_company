@@ -256,7 +256,10 @@ class BodyTable extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       child: Table(
-          border: TableBorder.all(width: 0.5, color: Color(0xff10AB83)),
+          border: TableBorder.all(
+              width: 0.5,
+              color: Color(0xff10AB83),
+              borderRadius: BorderRadius.circular(4)),
           columnWidths: <int, TableColumnWidth>{
             0: IntrinsicColumnWidth(flex: 2),
             1: FlexColumnWidth(),
@@ -267,16 +270,16 @@ class BodyTable extends StatelessWidget {
               TableCell(
                   verticalAlignment: TableCellVerticalAlignment.fill,
                   child: Container(
-                    color: Colors.green,
+                    // color: Colors.green,
                     child: Column(
                       children: [
                         Container(
                           height: 40,
-                          color: Colors.green,
+                          // color: Colors.green,
                         ),
                         Container(
                           height: 40,
-                          color: Colors.blueGrey,
+                          // color: Colors.blueGrey,
                         )
                       ],
                     ),
@@ -284,7 +287,7 @@ class BodyTable extends StatelessWidget {
               Container(
                 width: 78,
                 height: 80,
-                color: Colors.cyan,
+                // color: Colors.cyan,
               )
             ])
           ]),
