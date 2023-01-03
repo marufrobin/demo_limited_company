@@ -88,14 +88,12 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         ExpansionTile(
-                          childrenPadding: EdgeInsets.all(12),
-                          // backgroundColor: Color(0xffC9ECE3),
+                          // childrenPadding: EdgeInsets.all(12),
+                          backgroundColor: Color(0xffC9ECE3),
                           collapsedTextColor: Colors.black,
-
                           iconColor: Color(0xff10AB83),
                           textColor: Color(0xff10AB83),
                           expandedCrossAxisAlignment: CrossAxisAlignment.start,
-
                           leading: IconButton(
                               onPressed: (() {}),
                               icon: Icon(
@@ -112,67 +110,73 @@ class HomePage extends StatelessWidget {
                           ),
                           children: [
                             IntrinsicHeight(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  VerticalDivider(
-                                    color: Color(0xffC9ECE3),
-                                    width: 10,
-                                    thickness: 1,
-                                  ),
-                                  SizedBox(
-                                    width: 46,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Purchase List",
-                                        style: buildTSForExpansion(12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                        "Purchase List",
-                                        style: buildTSForExpansion(12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                        "Order List",
-                                        style: buildTSForExpansion(12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text(
-                                        "VAT List",
-                                        style: buildTSForExpansion(12),
-                                      ),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text("Product Unit",
-                                          style: buildTSForExpansion(12)),
-                                      SizedBox(
-                                        height: 12,
-                                      ),
-                                      Text("Purchese Report",
-                                          style: buildTSForExpansion(12)),
-                                    ],
-                                  )
-                                ],
+                              child: Container(
+                                padding: EdgeInsets.all(16),
+                                color: Colors.white,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    VerticalDivider(
+                                      color: Color(0xffC9ECE3),
+                                      width: 10,
+                                      thickness: 1,
+                                    ),
+                                    SizedBox(
+                                      width: 46,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Purchase List",
+                                          style: buildTSForExpansion(12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                          "Purchase List",
+                                          style: buildTSForExpansion(12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                          "Order List",
+                                          style: buildTSForExpansion(12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text(
+                                          "VAT List",
+                                          style: buildTSForExpansion(12),
+                                        ),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text("Product Unit",
+                                            style: buildTSForExpansion(12)),
+                                        SizedBox(
+                                          height: 12,
+                                        ),
+                                        Text("Purchese Report",
+                                            style: buildTSForExpansion(12)),
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ),
                             )
                           ],
                         ),
                         ExpansionTile(
+                          backgroundColor: Color(0xffC9ECE3),
+                          collapsedTextColor: Colors.black,
                           iconColor: Color(0xff10AB83),
                           textColor: Color(0xff10AB83),
                           leading: IconButton(
@@ -191,6 +195,8 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         ExpansionTile(
+                          backgroundColor: Color(0xffC9ECE3),
+                          collapsedTextColor: Colors.black,
                           iconColor: Color(0xff10AB83),
                           textColor: Color(0xff10AB83),
                           leading: IconButton(
@@ -288,7 +294,25 @@ class BodyTable extends StatelessWidget {
                         ),
                       ),
                       Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 14, vertical: 12),
                         height: 40,
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              "Previous Due",
+                              style: buildTS(14, Colors.black),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "01 January 2022",
+                              style: buildTS(12, Colors.black, FontWeight.w400),
+                            )
+                          ],
+                        ),
                         // color: Colors.blueGrey,
                       )
                     ],
@@ -297,16 +321,19 @@ class BodyTable extends StatelessWidget {
                 width: 78,
                 height: 80,
                 // color: Colors.cyan,
+                child: Column(
+                  children: [Text("Due")],
+                ),
               )
             ])
           ]),
     );
   }
 
-  TextStyle buildTS(double fs, [Color? clr]) {
+  TextStyle buildTS(double fs, [Color? clr, FontWeight? fw]) {
     return TextStyle(
         fontSize: fs,
-        fontWeight: FontWeight.w600,
+        fontWeight: fw == null ? FontWeight.w600 : fw,
         fontFamily: "Poppins",
         color: clr == null ? Color(0xff10AB83) : clr);
   }
